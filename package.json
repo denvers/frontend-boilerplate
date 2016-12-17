@@ -1,0 +1,27 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "1.0.0",
+  "description": "My basic frontend boilerplate using NPM scripts, Browserify, SASS compiling and Watchify.",
+  "main": "index.js",
+  "scripts" : {
+    "start" : "npm run serve & npm run watch",
+    "serve": "browser-sync start --startPath \"app/\" --server --files \"app/*.html, app/css/*.css\"",
+    "build": "npm run build:js & npm run build:css",
+    "watch": "npm run watch:js & npm run watch:css",
+    "build:js": "browserify app/js/index.js > app/js/bundle.js",
+    "watch:js": "watchify app/js/index.js -do app/js/bundle.js",
+    "build:css" : "node-sass app/css/scss/style.scss app/css/style.css",
+    "watch:css": "nodemon -e scss -x \"npm run build:css\""
+  },
+  "author": "Denver Sessink <denver@dsinternet.nl>",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "node-sass": "^4.0.0",
+    "nodemon": "^1.11.0",
+    "watchify": "^3.8.0"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
