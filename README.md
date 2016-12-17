@@ -11,4 +11,4 @@ My default front-end boilerplate setup using:
 Usage:
 
   * `yarn`
-  * `npm run start`
+  * `yarn run start`
